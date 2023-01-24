@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>Assignment 01, JavaScript Objects</h2>
+		<p>A method is a function definition, stored as a property value.</p>
+		<p id="demo"></p>
+    <script>
+	//Create object Prototype pattern
+	function car() {
+	} 
+	car.prototype.color = "red";
+	car.prototype.make = 25;
+	car.prototype.model = "Tesla X";
+	car.prototype.year = 2021;
+	car.prototype.sayType = function(){
+		console.log("Car model:"+ this.model + ", Car Production Year:"+ this.year);
+	};
+    //Create a Module
+    var myRevealingModule = (function( ) {
+	//Car object
+        var privateCar = new car();
+	function publicGetColor( ){
+		return privateCar.color;
+	}
+	function publicChangeColor(newColor) {
+		privateCar.color = newColor;
+	}
+	
+
+// Reveal public pointers to 
+// private functions and/or properties
+	
+	return {
+		changeColor: publicChangeColor,
+        getColor : publicGetColor
+	};
+    })( );
+//Invoke and Access Module
+    console.log(myRevealingModule.getColor());
+    myRevealingModule.changeColor("blue");
+    console.log(myRevealingModule.getColor());
+
+	</script>
+	</body></html>
+	

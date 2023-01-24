@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>Assignment 01, JavaScript Objects</h2>
+		<p>A method is a function definition, stored as a property value.</p>
+		<p id="demo"></p>
+	<script>
+	//Create object Prototype pattern
+	function car() {
+	} 
+	car.prototype.color = "red";
+	car.prototype.make = 25;
+	car.prototype.model = "Tesla X";
+	car.prototype.year = 2021;
+	car.prototype.sayType = function(){
+		console.log("Car model:"+ this.model + ", Car Production Year:"+ this.year);
+	};
+	//Implement object
+	var car1 = new car();
+	//Display object
+	document.getElementById("demo").innerHTML = car1.sayType();
+	//Redefine method of Object
+	car.prototype.sayType = function(){
+		console.log("Car model:"+ this.model + ", Car Color:"+ this.color);
+	}
+	//Implement a new car Object
+	var car2 = new car();
+	//Display object
+	document.getElementById("demo").innerHTML = car2.sayType();
+	</script>
+	</body></html>
+	

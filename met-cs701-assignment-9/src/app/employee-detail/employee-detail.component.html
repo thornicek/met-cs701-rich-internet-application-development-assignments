@@ -1,0 +1,14 @@
+<div *ngIf="employee">
+<h2>{{employee.lastName | uppercase}} Details</h2>
+ <div>
+     <ul>
+        <li><span>Last name: </span>{{employee.lastName}}</li>
+        <li><span>First name: </span>{{employee.firstName}}</li>
+        <li><span>Extension: </span>{{employee.extension}}</li>
+        <li><span>Email: </span>{{employee.email}}</li>
+        <li><span>Reports to: </span>{{employee.reportsTo}}</li>
+        <li><span>Job title: </span>{{employee.jobTitle}}</li>
+     </ul>
+
+ </div>
+</div>

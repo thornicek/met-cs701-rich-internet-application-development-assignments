@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>Assignment 01, JavaScript Objects</h2>
+		<p>A method is a function definition, stored as a property value.</p>
+		<p id="demo"></p>
+	<script>
+	//Create new Supertype()
+	function Vehicle() {
+        color = "red",
+        make = 25,
+        model = "Tesla X",
+        year = 2020,
+        passengerCapacity = 4
+    };
+    //Create Vehicle object from SuperType()
+    var Vehicle1 = new Vehicle();
+    //Create new Subtype()
+    function Truck(){
+        driver = "Bob",
+        capacityInTons = 10,
+        emptyWeight = 5
+    };
+    //Subtype inherits Supertype properties
+    Truck.prototype = new Vehicle();
+    //Add method to Subtype()
+    Truck.prototype.totalWeight = function(capacityInTons, emptyWeight){
+        return this.emptyWeight + this.capacityInTons;
+    };
+    //Create a Bus object
+    var Bus = new Truck();
+    Bus.driver = "John";
+    Bus.capacityInTons = 12
+    Bus.emptyWeight = 7;
+    //Present totalWeight in console
+    console.log(Bus.totalWeight());
+    //Display Bus object totalWeight in Html
+	document.getElementById("demo").innerHTML = Bus.totalWeight();
+
+
+	</script>
+	</body></html>
+	

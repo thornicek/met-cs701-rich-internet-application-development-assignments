@@ -1,0 +1,15 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <script src="/angular157.js"></script>
+    <script src="/part1.js"></script>
+  </head>
+  <body>
+   <div ng-controller='HelloController'>
+    <input ng-model='greeting'>
+    <input ng-model='delimiter'>
+    <p>{{greeting | separater:this}}(With Option)</p>
+    <p>{{greeting}}(Default)</p>
+  </div>
+  </body>
+</html>

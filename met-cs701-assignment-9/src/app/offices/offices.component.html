@@ -1,0 +1,17 @@
+<div class="container">
+    <table>
+      <thead>
+          <tr>
+              <th>Office City</th>
+              <th>Office Code</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let office of offices" (click)="onSelect(office)" [class.selected]="office === selectedoffice" (click)="onSelect(office)">
+          <td> <span class="badge">{{office.city}}</span> </td>
+          <td> <span class="badge">{{office.officeCode}}</span> </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <app-office-detail [office]="selectedoffice" ></app-office-detail>
